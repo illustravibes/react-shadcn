@@ -21,6 +21,18 @@ import {
   AudioWaveform,
   Command,
   GalleryVerticalEnd,
+  Wallet,
+  BarChart3,
+  Receipt,
+  CreditCard,
+  Banknote,
+  Box,
+  Hammer,
+  Users2,
+  Percent,
+  Coins,
+  TrendingUp,
+  FileText,
 } from 'lucide-react'
 import { ClerkLogo } from '@/assets/clerk-logo'
 import { type SidebarData } from '../types'
@@ -95,6 +107,89 @@ export const sidebarData: SidebarData = {
               url: '/clerk/user-management',
             },
           ],
+        },
+      ],
+    },
+    {
+      title: 'Finance',
+      items: [
+        {
+          title: 'Chart of Accounts',
+          url: '/finance/chart-of-accounts',
+          icon: BarChart3,
+        },
+        {
+          title: 'Manual Journal',
+          url: '/finance/manual-journal',
+          icon: FileText,
+        },
+        {
+          title: 'Invoicing',
+          url: '/finance/invoicing',
+          icon: Receipt,
+        },
+        {
+          title: 'Reports',
+          icon: TrendingUp,
+          items: [
+            {
+              title: 'Profit & Loss',
+              url: '/finance/reports/profit-loss',
+            },
+            {
+              title: 'Balance Sheet',
+              url: '/finance/reports/balance-sheet',
+            },
+            {
+              title: 'Trial Balance',
+              url: '/finance/reports/trial-balance',
+            },
+          ],
+        },
+        {
+          title: 'Expenses',
+          url: '/finance/expenses',
+          icon: Wallet,
+        },
+        {
+          title: 'Banking',
+          url: '/finance/banking',
+          icon: CreditCard,
+        },
+        {
+          title: 'Inventory',
+          url: '/finance/inventory',
+          icon: Box,
+        },
+        {
+          title: 'Fixed Assets',
+          url: '/finance/fixed-assets',
+          icon: Hammer,
+        },
+        {
+          title: 'Payroll',
+          url: '/finance/payroll',
+          icon: Users2,
+        },
+        {
+          title: 'Tax Management',
+          url: '/finance/tax',
+          icon: Percent,
+        },
+        {
+          title: 'Petty Cash',
+          url: '/finance/petty-cash',
+          icon: Coins,
+        },
+        {
+          title: 'Multi-Currency',
+          url: '/finance/currency',
+          icon: Banknote,
+        },
+        {
+          title: 'Audit Trail',
+          url: '/finance/audit-trail',
+          icon: FileText,
         },
       ],
     },
