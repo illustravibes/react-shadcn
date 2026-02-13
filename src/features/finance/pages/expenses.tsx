@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/table'
 
 export default function ExpensesPage() {
-  const [globalFilter, setGlobalFilter] = useState('')
+  const [globalFilter] = useState('')
 
   const { data: expenses = [], isLoading } = useQuery({
     queryKey: ['expenses'],

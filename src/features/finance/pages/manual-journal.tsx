@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Plus, Download } from 'lucide-react'
-import DataTable from '@/components/data-table'
+import { DataTable } from '@/components/data-table'
 import { manualJournalColumns } from '../components/manual-journal-columns'
 import ManualJournalDialog from '../components/manual-journal-dialog'
 import { manualJournalsData } from '../data/manual-journal-data'
@@ -42,7 +42,7 @@ export default function ManualJournalPage() {
       const searchLower = globalFilter.toLowerCase()
       return (
         journal.journalNumber.toLowerCase().includes(searchLower) ||
-        journal.description.toLowerCase().includes(searchLower) ||
+        journal.description?.toLowerCase().includes(searchLower) ||
         journal.status.toLowerCase().includes(searchLower)
       )
     })

@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/table'
 
 export default function BankingPage() {
-  const [globalFilter, setGlobalFilter] = useState('')
+  const [globalFilter] = useState('')
 
   const { data: accounts = [], isLoading } = useQuery({
     queryKey: ['bankAccounts'],

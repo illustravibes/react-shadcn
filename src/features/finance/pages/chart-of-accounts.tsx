@@ -9,11 +9,10 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Plus, Download } from 'lucide-react'
-import DataTable from '@/components/data-table'
+import { DataTable } from '@/components/data-table'
 import { chartOfAccountsColumns } from '../components/chart-of-accounts-columns'
 import ChartOfAccountsDialog from '../components/chart-of-accounts-dialog'
 import { chartOfAccountsData } from '../data/chart-of-accounts-data'
-import { ChartOfAccount } from '../types'
 import { chartOfAccountsApi } from '../api'
 
 export default function ChartOfAccountsPage() {

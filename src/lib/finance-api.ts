@@ -82,11 +82,11 @@ export const invoicesAPI = {
 
 // Reports API
 export const reportsAPI = {
-  profitLoss: (params?: any) =>
+  profitLoss: () =>
     apiCall('/api/reports/profit-loss', {
       method: 'GET',
     }),
-  balanceSheet: (params?: any) =>
+  balanceSheet: () =>
     apiCall('/api/reports/balance-sheet', {
       method: 'GET',
     }),

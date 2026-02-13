@@ -82,19 +82,19 @@ export default function PettyCashPage() {
                   {accounts.map((account) => (
                     <TableRow key={account.id}>
                       <TableCell>{account.accountName}</TableCell>
-                      <TableCell>{account.manager}</TableCell>
+                      <TableCell>{account.accountManager || '-'}</TableCell>
                       <TableCell>{account.currency}</TableCell>
                       <TableCell>{account.initialBalance?.toLocaleString()}</TableCell>
                       <TableCell className="font-semibold">{account.currentBalance?.toLocaleString()}</TableCell>
                       <TableCell>
                         <span
                           className={`rounded-full px-2 py-1 text-xs ${
-                            account.is_active
+                            account.status === 'ACTIVE'
                               ? 'bg-green-100 text-green-800'
                               : 'bg-gray-100 text-gray-800'
                           }`}
                         >
-                          {account.is_active ? 'Active' : 'Closed'}
+                          {account.status === 'ACTIVE' ? 'Active' : 'Closed'}
                         </span>
                       </TableCell>
                     </TableRow>

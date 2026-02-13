@@ -9,9 +9,9 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Plus, Download } from 'lucide-react'
-import DataTable from '@/components/data-table'
+import { DataTable } from '@/components/data-table'
 import { invoicingColumns } from '../components/invoicing-columns'
-import { invoicingData } from '../data/invoicing-data'
+import { invoicesData } from '../data/invoicing-data'
 import { invoiceApi } from '../api'
 
 export default function InvoicingPage() {
@@ -30,14 +30,14 @@ export default function InvoicingPage() {
         return data
       } catch (error) {
         console.error('[v0] Error fetching invoices:', error)
-        return invoicingData
+        return invoicesData
       }
     },
     staleTime: 1000 * 60 * 5,
   })
 
   const filteredInvoices = useMemo(() => {
-    return invoices.filter((invoice) => {
+    return invoices.filter((invoice: any) => {
       const searchLower = globalFilter.toLowerCase()
       return (
         invoice.invoiceNumber.toLowerCase().includes(searchLower) ||

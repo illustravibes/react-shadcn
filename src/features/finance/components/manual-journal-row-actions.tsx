@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
-import { MoreHorizontal, Edit2, Trash2, Eye, CheckCircle2 } from 'lucide-react'
+import { MoreHorizontal, Trash2, Eye, CheckCircle2 } from 'lucide-react'
 import { ManualJournal } from '../types'
 import { useState } from 'react'
 import ManualJournalDialog from './manual-journal-dialog'

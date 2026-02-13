@@ -10,7 +10,6 @@ import {
 import { Button } from '@/components/ui/button'
 import {
   MoreHorizontal,
-  Edit2,
   Trash2,
   Eye,
   Mail,

@@ -101,14 +101,18 @@ export default function InventoryPage() {
                       <TableCell>
                         <span
                           className={`rounded-full px-2 py-1 text-xs ${
-                            item.status === 'IN_STOCK'
+                            item.quantity > item.reorderLevel
                               ? 'bg-green-100 text-green-800'
-                              : item.status === 'LOW_STOCK'
+                              : item.quantity <= item.reorderLevel && item.quantity > 0
                                 ? 'bg-yellow-100 text-yellow-800'
                                 : 'bg-red-100 text-red-800'
                           }`}
                         >
-                          {item.status}
+                          {item.quantity > item.reorderLevel
+                            ? 'In Stock'
+                            : item.quantity > 0
+                              ? 'Low Stock'
+                              : 'Out of Stock'}
                         </span>
                       </TableCell>
                     </TableRow>

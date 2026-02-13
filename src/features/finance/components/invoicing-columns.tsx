@@ -2,7 +2,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { Invoice } from '../types'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
-import DataTableColumnHeader from '@/components/data-table/column-header'
+import { DataTableColumnHeader } from '@/components/data-table/column-header'
 import InvoiceRowActions from './invoicing-row-actions'
 import { format } from 'date-fns'
 
