@@ -63,10 +63,12 @@ export default function ManualJournalViewDialog({
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Status</p>
-                  <Badge className="mt-1">
-                    {journal.status === 'POSTED'
-                      ? 'bg-green-100 text-green-800'
-                      : 'bg-gray-100 text-gray-800'}
+                  <Badge
+                    className={`mt-1 ${
+                      journal.status === 'POSTED'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-gray-100 text-gray-800'
+                    }`}
                   >
                     {journal.status}
                   </Badge>
