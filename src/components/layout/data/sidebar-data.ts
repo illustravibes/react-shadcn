@@ -97,6 +97,10 @@ export const sidebarData: SidebarData = {
               title: 'Buku Besar',
               url: '/finance/ledger',
             },
+            {
+              title: 'Invoice',
+              url: '/finance/invoice',
+            },
           ],
         },
         {

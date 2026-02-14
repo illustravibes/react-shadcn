@@ -53,3 +53,37 @@ export const ledgerEntrySchema = z.object({
 })
 
 export type LedgerEntry = z.infer<typeof ledgerEntrySchema>
+
+// Invoice Item Schema
+export const invoiceItemSchema = z.object({
+  id: z.string(),
+  description: z.string(),
+  quantity: z.number().positive(),
+  unitPrice: z.number().nonnegative(),
+  amount: z.number().nonnegative(), // quantity * unitPrice
+})
+
+export type InvoiceItem = z.infer<typeof invoiceItemSchema>
+
+// Invoice Schema
+export const invoiceSchema = z.object({
+  id: z.string(),
+  invoiceNo: z.string(),
+  date: z.date(),
+  dueDate: z.date(),
+  customerName: z.string(),
+  customerEmail: z.string().email().optional(),
+  items: z.array(invoiceItemSchema),
+  subtotal: z.number().nonnegative(),
+  taxRate: z.number().nonnegative().default(0), // percentage (e.g., 10 for 10%)
+  taxAmount: z.number().nonnegative(),
+  total: z.number().nonnegative(),
+  notes: z.string().optional(),
+  status: z.enum(['draft', 'sent', 'paid', 'cancelled']).default('draft'),
+  autoPostJournal: z.boolean().default(true),
+  postedJournalId: z.string().optional(), // Reference to auto-posted journal
+  createdAt: z.date(),
+  updatedAt: z.date(),
+})
+
+export type Invoice = z.infer<typeof invoiceSchema>

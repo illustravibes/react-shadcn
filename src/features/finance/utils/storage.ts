@@ -1,8 +1,9 @@
-import { type Account, type JournalEntry } from '../data/schema'
+import { type Account, type JournalEntry, type Invoice } from '../data/schema'
 import { initialAccounts, initialJournals } from '../data/initial-data'
 
 const ACCOUNTS_STORAGE_KEY = 'finance_accounts'
 const JOURNALS_STORAGE_KEY = 'finance_journals'
+const INVOICES_STORAGE_KEY = 'finance_invoices'
 
 export function loadAccounts(): Account[] {
   try {
@@ -62,5 +63,36 @@ export function saveJournals(journals: JournalEntry[]): void {
     localStorage.setItem(JOURNALS_STORAGE_KEY, JSON.stringify(journals))
   } catch (error) {
     console.error('Error saving journals to storage:', error)
+  }
+}
+
+export function loadInvoices(): Invoice[] {
+  try {
+    if (typeof window === 'undefined') return []
+    const stored = localStorage.getItem(INVOICES_STORAGE_KEY)
+    if (!stored) {
+      return []
+    }
+    const parsed = JSON.parse(stored)
+    // Convert date strings back to Date objects
+    return parsed.map((invoice: any) => ({
+      ...invoice,
+      date: new Date(invoice.date),
+      dueDate: new Date(invoice.dueDate),
+      createdAt: new Date(invoice.createdAt),
+      updatedAt: new Date(invoice.updatedAt),
+    }))
+  } catch (error) {
+    console.error('Error loading invoices from storage:', error)
+    return []
+  }
+}
+
+export function saveInvoices(invoices: Invoice[]): void {
+  try {
+    if (typeof window === 'undefined') return
+    localStorage.setItem(INVOICES_STORAGE_KEY, JSON.stringify(invoices))
+  } catch (error) {
+    console.error('Error saving invoices to storage:', error)
   }
 }
