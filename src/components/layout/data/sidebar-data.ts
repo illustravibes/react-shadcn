@@ -21,6 +21,9 @@ import {
   AudioWaveform,
   Command,
   GalleryVerticalEnd,
+  PieChart,
+  Ledger,
+  BookOpen,
 } from 'lucide-react'
 import { ClerkLogo } from '@/assets/clerk-logo'
 import { type SidebarData } from '../types'
@@ -77,6 +80,24 @@ export const sidebarData: SidebarData = {
           title: 'Users',
           url: '/users',
           icon: Users,
+        },
+        {
+          title: 'Keuangan',
+          icon: PieChart,
+          items: [
+            {
+              title: 'Chart of Accounts',
+              url: '/finance/coa',
+            },
+            {
+              title: 'Jurnal Umum',
+              url: '/finance/journal',
+            },
+            {
+              title: 'Buku Besar',
+              url: '/finance/ledger',
+            },
+          ],
         },
         {
           title: 'Secured by Clerk',
